@@ -1,0 +1,132 @@
+/* Google Fonts
+---------------------------------------------------------------------------------- */
+
+@font-face{
+    font-family:"bungee";
+    src:url('../FONTS/Bungee/Bungee-Regular.ttf');
+}
+@font-face{
+    font-family:"metrophobic";
+    src:url('../FONTS/Metrophobic/Metrophobic-Regular.ttf');
+}
+
+/* --------------------------------------------------------------------------------- */
+
+.p-strip--image {
+    background-image: url('../IMG/vanilla-grad-background.png');
+    background-position: 75% 25%;
+}
+
+.p-table-wrapper {
+    overflow-x: scroll;
+}
+
+table {
+    min-width: 984px;
+    width: 100%;
+}
+
+th[colspan="5"],
+th[colspan="4"] {
+    display: none;
+}
+
+th:first-child,
+td:first-child {
+    vertical-align: inherit;
+    width: 5%;
+}
+
+th:nth-of-type(2),
+td:nth-of-type(2) {
+    width: 20em;
+}
+
+th:nth-of-type(3),
+td:nth-of-type(3) {
+    width: 12em;
+}
+
+th:nth-of-type(4),
+td:nth-of-type(4) {
+    width: 6em;
+}
+
+/*     th:nth-of-type(5),
+td:nth-of-type(5) {
+} */
+
+/* Tamaño de del texto
+-------------------------------------------------- */
+.texto {
+ font-family: metrophobic;
+ font-size: 22;
+}
+
+.codaCaption{
+    font-family: bungee;
+    font-size: 20px;
+}
+
+/* Boton de acceso a internet
+-------------------------------------------------- */
+.ccaution {
+    background-color:#EF782C !important;
+    color: white !important;
+}
+
+/* Iconos
+---------------------------------------------------- */
+
+.iconss{
+    /* margin: 10px; */
+    width: 60px;
+    height: 50px;
+    font-size: 40px;
+    background-color: #EF782C;
+    color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.incons-dolar{
+    width: 50px;
+    height: 40px;
+    font-size: 30px;
+    color: #51A755;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.p-precio{
+    display: inline-block; 
+    font-size: 28px; 
+    font-family: bungee;
+
+}
+
+/* Titulos de la pagina H2
+---------------------------------------------------------- */
+
+.titulos-h2 {
+    text-align: center;
+}
+
+.titulos-h2-div{
+    margin-left: 10px;
+    display: inline;
+}
+
+.titulo-modal-login{
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+/* Modal LOGIN
+------------------------------------------------------- */
+
+.modal-ocultar{
+    display:none;
+}

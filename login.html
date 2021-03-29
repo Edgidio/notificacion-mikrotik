@@ -1,0 +1,207 @@
+<!DOCTYPE  html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="EDGIDIO RANZE LEÓN FLOREZ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CIBERTYX | Notificación</title>
+
+    <link rel="shortcut icon" href="IMG/favicon.ico" type="image/x-icon">
+    <!-- Framework VANILLA-FRAMEWORK-->
+    <link href="./libs/vanilla-framework/vanilla-framework-version-2.24.1.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="libs/fontawesome-free-5.15.3-web/css/all.min.css">
+</head>
+<body>
+
+    <!-- FORMULARIO NO VISIBLE -->
+    $(if chap-id)
+        <form name="sendin" action="$(link-login-only)" method="post">
+            <input type="hidden" name="username" />
+            <input type="hidden" name="password" />
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+        </form>
+        
+        <script type="text/javascript" src="./md5.js"></script>
+        <script type="text/javascript">
+        //<!--
+            function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+            }
+        //-->
+        </script>
+    $(endif)
+
+    <!-- CONTENIDO VISIBLE -->
+    <header id="navigation" class="p-navigation">
+        <div class="row">
+            <div class="p-navigation__banner">
+                <div class="p-navigation__logo">
+                    <a class="p-navigation__link">
+                        <img class="p-navigation__image" src="IMG/cybertyx-texto.png"
+                            alt="Logo de CIBERTYX" title="CIBERTYX">
+                    </a>
+                </div>
+            </div>
+            <nav class="p-navigation__nav" role="menubar">
+                <span class="u-off-screen">
+                </span>
+            </nav>
+        </div>
+    </header>
+
+    <section class="p-strip--image is-dark">
+        <div class="row">
+            <div id="header"></div>
+            <h1 class="u-no-margin--bottom">¡NOTIFICACIÓN!</h1>
+        </div>
+    </section>
+
+    <!-- CONTENIDO -->
+    <div id="pageWrapper" class="p-strip">
+        <div class="row">
+
+        <!-- MODAL LOGIN -->
+        <div class="modal-ocultar p-modal" id="modal">
+            <div class="p-modal__dialog" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+                <header class="p-modal__header">
+                <h2 class="p-modal__title titulo-modal-login" id="modal-title">INICIO DE SESIÓN</h2>
+                <button id="cerrar_modal" class="p-modal__close" aria-label="Close active modal" aria-controls="modal">Close</button>
+                </header>
+
+                <div class="row">
+                    <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                        <!-- OCULTO -->
+                        <input type="hidden" name="dst" value="$(link-orig)" />
+                        <input type="hidden" name="popup" value="true" />
+
+                        <label for="username">Usuario</label>
+                        <input id="username" name="username" type="text" value="$(username)" placeholder="Usuario">
+
+                        <label for="password">Contraseña</label>
+                        <input id="password" name="password" type="password" placeholder="******">
+
+                        $(if trial == 'yes')
+                        <a style="color: red;" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" class="p-link--soft">Click aqui para 200 MB GRATIS</a>
+                        $(endif)
+
+                        <!-- VALIDACION -->
+                        $(if error)
+                            <div class="p-notification--caution">
+                                <p class="p-notification__response" role="status">
+                                <span class="p-notification__status">$(error)</span>
+                                </p>
+                            </div>
+                        $(endif)
+
+                        <input id="iniciar-sesion" class="p-button--neutral ccaution" type="submit" value="INICIAR SESIÓN" />
+                      </form>
+                </div>
+            </div>
+        </div>
+
+            <div id="main">
+                <!-- NOTIFICACIÓN -->
+                <div class="p-notification--caution">
+                    
+                    <p class="p-notification__response texto" role="status">
+
+                      <span class="p-notification__status codaCaption">Información:</span>
+
+                      <br>
+                      <br>
+        
+                      Ésta red se mantiene con aporte de algunos usuarios que conscientemente hacen un aporte mensual para contribuir al mantenimiento, funcionamiento y mejoras de ésta red, éstos aportes han ido mermado con el paso del tiempo, es por eso que el equipo de administradores de esta red ve con necesidad la aplicacion de un cobro mensual a usuarios con alto requerimiento de datos.   MAS INFORMACION: 0412.093.60.57
+					  <br> 
+					  <strong>A partir del proximo 01-04-2021 se implementarán los siguientes planes, manteniendo el inicio de sesion gratuito con las restricciones de 200MB Cada 6 horas.</strong>
+                    </p>
+
+                </div>
+            </div>
+            
+            <h2 class="titulos-h2">PLANES DE PAGO</h2>
+
+            <!-- PLANES -->
+            <hr class="is-muted">
+
+            <div class="row p-divider">
+
+                <div class="col-4 p-divider__block">
+
+                    <i class="iconss fas fa-cloud-download-alt"></i>
+                    <h2 class="titulos-h2-div">30 GB</h2>
+
+                    <p>Éste plan de datos está calculado a medida de 1GB Diario, Rinde para un grupo familiar enfocado en lo necesario (Noticias, Bancos, Whatsapp, Poco de redes sociales y poco entretenimiento digital.)</p>
+
+                    <p class="p-precio"> 5 </p> <i class="incons-dolar fas fa-dollar-sign"></i>
+                </div>
+
+                <div class="col-4 p-divider__block">
+                    <i class="iconss fas fa-cloud-download-alt"></i>
+                    <h2 class="titulos-h2-div">65 GB</h2>
+
+                    <p>Calculadora Razón de 2GB Diarios Rinde para un grupo familiar que disfrutan de Noticias, Bancos, Whatsapp, y un uso moderado-normal de redes sociales y entretenimiento digital.  </p>
+
+                    <p class="p-precio"> 10 </p> <i class="incons-dolar fas fa-dollar-sign"></i>
+                </div>
+
+                <div class="col-4 p-divider__block">
+                    <i class="iconss fas fa-cloud-download-alt"></i>
+                    <h2 class="titulos-h2-div">120 GB</h2>
+
+                    <p>Calculadora Razón de 4GB Diarios Rinde para un grupo familiar que disfrutan de Noticias, Bancos, Whatsapp, y un uso extenso de redes sociales y entretenimiento digital.
+					<br><strong><em> El cupo de usuarios con este plan está limitado, contacte para mas informacion.</em></strong>
+					</p>
+
+                    <p class="p-precio"> 15 </p> <i class="incons-dolar fas fa-dollar-sign"></i>
+                </div>
+
+            </div>
+            
+            <hr class="is-muted">
+
+            <br>
+
+            <!-- FORMULARIO PRUEBA -->
+            <h2 class="titulos-h2">Continuar la navegacion</h2>
+
+            <br>
+
+            <form>
+                <input value="Aceptar" type="checkbox" id="accepto" name="accepto">
+                <label for="accepto">He leído toda la informacion, HABILITAR INICIO DE SESION</label>
+            </form>
+
+			<br>
+
+            <div>
+                $(if error)
+                    <script>
+                        document.getElementById('modal').classList.remove('modal-ocultar');
+                    </script> 
+                $(endif)
+            </div>
+
+			<br>
+
+            <div>
+                <button disabled class="p-button--neutral ccaution" id="showModal" aria-controls="modal">INICIAR</button>
+            </div>            
+        </div> 
+
+    </div>
+
+    <script src="JS/index.js"></script>
+    <script type="text/javascript">
+        <!--
+          document.login.username.focus();
+        //-->
+    </script>
+</body>
+</html>

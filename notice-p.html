@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>ALERTA</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="expires" content="-1" />
+    <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            background-color: white;
+        }
+        
+        #particles {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            z-index: -2;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            display: block;
+        }
+        
+        .profile-img:after,
+        .im:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="jquery/jquery-1.11.1.min.js"></script>
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript" src="md5.js"></script>
+    <div class="container">
+        <div class="row vertical-offset-100">
+            <div class="col-md-6 col-md-offset-3">
+                <div>
+                    <img class="profile-img" src="Oxygen480.png" alt="">
+                </div>
+                <div class="panel panel-default" style="background-color: rgba(245, 245, 245, 0);">
+                    <div class="panel-heading">
+                        <div class="panel-title text-center">Aviso de corte</div>
+                    </div>
+                    <div class="panel-body">
+                        <h3>Hola $(username)<br/></h3>
+                        <center>
+                            <h4 style="color:blue">Estas utilizando un plan de prueba de solo 3 dias<br/>ve al panel de control para activar un plan completo.</h4></center>
+                        <div>
+                            &nbsp;
+                            <center>
+                                <input class="btn btn-md btn-primary" type="button" data-toggle="modal" data-target="#PanelLogin" value="Panel de Control" />
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="PanelLogin" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Panel de Control</h4>
+                </div>
+                <div class="modal-body">
+                    <form name="sendin" action="https://www.cibertyx.com.ve/control/index.php?_route=login/post" method="post">
+                        <input type="hidden" name="username" id="userlogin" value="$(username)" />
+                        <p>Por seguridad ingrese su contraseña.</p>
+                        <input type="password" name="password" id="userpass" class="form-control" placeholder="Contraseña" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary pull-right" class="form-control">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+    <div id="particles"></div>
+    <script type="text/javascript" src="animation.js"></script>
+</body>
+
+</html>
